@@ -34,7 +34,7 @@ public class ExampleController {
     }
 
     @PostMapping("/example/user")
-    @RequestLog(responseLog = false)
+    @RequestLog
     public Response requestLogPost(@RequestBody Request user) {
         Response response = new Response();
         response.setCode(200);
