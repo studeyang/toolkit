@@ -2,14 +2,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.studeyang</groupId>
-    <artifactId>spring-boot-toolkit</artifactId>
-    <version>1.0.0</version>
+    <artifactId>toolkit</artifactId>
+    <version>1.1.0-SNAPSHOT</version>
     <name>${project.artifactId}</name>
-    <description>Spring Boot Toolkit</description>
+    <description>Java Tools Kit</description>
     <packaging>pom</packaging>
-    <url>https://github.com/studeyang/spring-boot-toolkit</url>
+    <url>https://github.com/studeyang/toolkit</url>
 
     <modules>
+        <module>toolkit-spring</module>
         <module>toolkit-commons</module>
         <module>spring-boot-example</module>
     </modules>
@@ -48,13 +49,13 @@
     <licenses>
         <license>
             <name>MIT License</name>
-            <url>https://github.com/studeyang/spring-boot-toolkit/blob/master/LICENSE</url>
+            <url>https://github.com/studeyang/toolkit/blob/master/LICENSE</url>
         </license>
     </licenses>
 
     <scm>
-        <connection>https://github.com/studeyang/spring-boot-toolkit.git</connection>
-        <url>https://github.com/studeyang/spring-boot-toolkit</url>
+        <connection>https://github.com/studeyang/toolkit.git</connection>
+        <url>https://github.com/studeyang/toolkit</url>
     </scm>
 
     <developers>
