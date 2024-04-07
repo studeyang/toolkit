@@ -117,7 +117,7 @@ public class ConfigurationLoader implements ImportSelector, EnvironmentAware, Be
         }
 
         try {
-            Class.forName("com.casstime.open.cassconfig.extension.ExtensionConfigsBeanDefinition");
+            Class.forName("io.github.open.toolkit.config.extension.ExtensionConfigsBeanDefinition");
             return ConfigCenterType.Panda;
         } catch (ClassNotFoundException ignore) {
         }

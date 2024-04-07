@@ -12,7 +12,9 @@
     <modules>
         <module>toolkit-spring</module>
         <module>toolkit-commons</module>
+        <module>toolkit-web</module>
         <module>toolkit-config</module>
+        <module>toolkit-config-spring-boot-starter</module>
         <module>spring-boot-example</module>
     </modules>
 
