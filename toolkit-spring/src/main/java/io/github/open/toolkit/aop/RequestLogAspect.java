@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Stack;
 
 /**
- * @author <a href="mailto:yanglu_u@126.com">dbses</a>
+ * @author <a href="https://github.com/studeyang">studeyang</a>
  * @since 1.0 2023/5/9
  */
 @Slf4j

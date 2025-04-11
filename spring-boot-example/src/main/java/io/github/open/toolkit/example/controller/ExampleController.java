@@ -6,7 +6,7 @@ import io.github.open.toolkit.example.dto.Response;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * @author <a href="mailto:yanglu_u@126.com">dbses</a>
+ * @author <a href="https://github.com/studeyang">studeyang</a>
  * @since 1.0 2023/5/9
  */
 @RestController

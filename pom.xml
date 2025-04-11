@@ -10,16 +10,19 @@
     <url>https://github.com/studeyang/toolkit</url>
 
     <modules>
-        <module>toolkit-spring</module>
+        <module>spring-boot-example</module>
+        <module>toolkit-cache</module>
         <module>toolkit-commons</module>
-        <module>toolkit-web</module>
         <module>toolkit-config</module>
         <module>toolkit-config-spring-boot-starter</module>
-        <module>spring-boot-example</module>
+        <module>toolkit-spring</module>
+        <module>toolkit-web</module>
     </modules>
 
     <properties>
         <project.build.jdk>1.8</project.build.jdk>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring-boot.version>2.3.8.RELEASE</spring-boot.version>
     </properties>

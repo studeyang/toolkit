@@ -3,7 +3,7 @@ package io.github.open.toolkit.example.dto;
 import lombok.Data;
 
 /**
- * @author <a href="mailto:yanglu_u@126.com">dbses</a>
+ * @author <a href="https://github.com/studeyang">studeyang</a>
  * @since 1.0 2023/5/9
  */
 @Data

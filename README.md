@@ -4,6 +4,7 @@
 - toolkit-config：配置中心基础包
 - toolkit-spring：集成 spring 的基础包
 - toolkit-web：原自 icec-cloud-base-webapp
+- toolkit-cache: 原自 fcbox-cache
 
 # toolkit-spring
 
@@ -68,4 +69,10 @@ public class Response {
 POST /example/user, params: {}, body: {"name":"studeyang","age":25}
 response body: {"code":200,"message":"studeyang create success"}
 ```
+
+# toolkit-cache
+
+原自 fcbox-cache，不同点：
+
+- getAllCacheStats 兼容展示了发布订阅 channel
 

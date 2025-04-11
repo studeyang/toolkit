@@ -1,2 +1,14 @@
 server:
   port: 8080
+  
+spring:
+  redis:
+    client-name: example
+    password: ${redis.password}
+    cluster.max-redirects: 3
+    cluster.nodes: ${redis.nodes}
+    jedis.pool.maxIdle: 50
+    jedis.pool.maxActive: 50
+    jedis.pool.minIdle: 10
+    jedis.pool.maxWait: 3000
+    timeout: 3000
