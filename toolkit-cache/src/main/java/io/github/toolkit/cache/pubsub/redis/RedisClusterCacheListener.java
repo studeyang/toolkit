@@ -41,7 +41,7 @@ public class RedisClusterCacheListener implements ISubscribeListener<GuavaCacheS
 
     @Override
     public void onMessage(GuavaCacheSubscribeDto message) {
-        logger.info("GuavaCacheSubscribeListener onMessage start，message =  {}", message);
+        logger.info("GuavaCacheSubscribeListener onMessage start, message = {}", message);
 
         try {
             if (message == null) {
@@ -67,7 +67,7 @@ public class RedisClusterCacheListener implements ISubscribeListener<GuavaCacheS
         } catch (Exception e) {
             logger.error("GuavaCacheSubscribeListener onMessage FastJSONHelper error , message is {} ", message, e);
         } finally {
-            logger.info("GuavaCacheSubscribeListener onMessage end ，message = {}", message);
+            logger.info("GuavaCacheSubscribeListener onMessage end, message = {}", message);
         }
     }
 

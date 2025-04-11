@@ -14,8 +14,7 @@
         <module>toolkit-cache</module>
         <module>toolkit-commons</module>
         <module>toolkit-config</module>
-        <module>toolkit-config-spring-boot-starter</module>
-        <module>toolkit-spring</module>
+        <module>toolkit-spring-boot-starter</module>
         <module>toolkit-web</module>
     </modules>
 
@@ -100,6 +99,12 @@
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
         </plugins>

@@ -1,0 +1,24 @@
+{
+  "properties": [
+    {
+      "name": "nacos.config.server-addr",
+      "type": "java.lang.String",
+      "description": "nacos地址."
+    },
+    {
+      "name": "nacos.config.namespace",
+      "type": "java.lang.String",
+      "description": "nacos namespace."
+    },
+    {
+      "name": "nacos.config.username",
+      "type": "java.lang.String",
+      "description": "nacos username."
+    },
+    {
+      "name": "nacos.config.password",
+      "type": "java.lang.String",
+      "description": "nacos password."
+    }
+  ]
+}

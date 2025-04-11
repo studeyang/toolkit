@@ -12,12 +12,11 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 @Slf4j
 public class RedisClusterCachePublisher implements IGuavaCachePublisher {
-    private final RedisTemplate redisTemplate;
+    private final RedisTemplate<Object, Object> redisTemplate;
     private final String channel;
     private ThreadPoolExecutor executors;
 
-
-    public RedisClusterCachePublisher(RedisTemplate redisTemplate, String channel) {
+    public RedisClusterCachePublisher(RedisTemplate<Object, Object> redisTemplate, String channel) {
         super();
         this.redisTemplate = redisTemplate;
         this.channel = channel;

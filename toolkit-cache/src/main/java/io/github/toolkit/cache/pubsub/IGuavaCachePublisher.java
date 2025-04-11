@@ -5,9 +5,9 @@ import io.github.toolkit.cache.dto.GuavaCacheSubscribeDto;
 public interface IGuavaCachePublisher {
     void publish(GuavaCacheSubscribeDto dto);
 
-    void publish(String channel, Object value);
+    void publish(String cacheName, Object cacheKey);
 
-    void publish(String channel);
+    void publish(String message);
 
     String getChannel();
 

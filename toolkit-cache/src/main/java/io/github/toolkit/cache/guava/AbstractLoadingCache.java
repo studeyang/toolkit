@@ -48,7 +48,7 @@ public abstract class AbstractLoadingCache<K, V> implements ILocalCache<K, V> {
                             .build(new CacheLoader<K, V>() {
                                 @Override
                                 public V load(K key) {
-                                    logger.info("AbstractLoadingCache loadData key =  {}", key);
+                                    logger.info("AbstractLoadingCache loadData key = {}", key);
                                     return loadData(key);
                                 }
                             });

@@ -1,43 +1,24 @@
 package io.github.toolkit.cache.dto;
 
-import java.io.Serializable;
+import lombok.Data;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
+import java.io.Serializable;
+
+/**
+ * @author <a href="https://github.com/studeyang">studeyang</a>
+ * @since 1.0 2025/4/11
+ */
+@Data
 public class GuavaCacheSubscribeDto implements Serializable {
     private static final long serialVersionUID = 7146613372230394212L;
-    public String cacheName;
-    public String cacheKey;
-    public String refreshCode;
-
-    public GuavaCacheSubscribeDto() {
-    }
-
-    public String getCacheName() {
-        return this.cacheName;
-    }
-
-    public void setCacheName(String cacheName) {
-        this.cacheName = cacheName;
-    }
-
-    public String getCacheKey() {
-        return this.cacheKey;
-    }
-
-    public void setCacheKey(String cacheKey) {
-        this.cacheKey = cacheKey;
-    }
+    private String cacheName;
+    private String cacheKey;
+    private String refreshCode;
 
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this);
     }
 
-    public String getRefreshCode() {
-        return this.refreshCode;
-    }
-
-    public void setRefreshCode(String refreshCode) {
-        this.refreshCode = refreshCode;
-    }
 }
