@@ -17,10 +17,10 @@ import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 public class RedisClusterCacheListener implements ISubscribeListener<GuavaCacheSubscribeDto>, InitializingBean, SmartLifecycle {
     private final Logger logger = LoggerFactory.getLogger(getClass());
     private RedisMessageListenerContainer listenerContainer;
-    private final RedisTemplate redisTemplate;
+    private final RedisTemplate<Object, Object> redisTemplate;
     private final String channel;
 
-    public RedisClusterCacheListener(RedisTemplate redisTemplate, String channel) {
+    public RedisClusterCacheListener(RedisTemplate<Object, Object> redisTemplate, String channel) {
         this.redisTemplate = redisTemplate;
         this.channel = channel;
     }

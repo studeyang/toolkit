@@ -17,7 +17,6 @@ public class RedisClusterCachePublisher implements IGuavaCachePublisher {
     private ThreadPoolExecutor executors;
 
     public RedisClusterCachePublisher(RedisTemplate<Object, Object> redisTemplate, String channel) {
-        super();
         this.redisTemplate = redisTemplate;
         this.channel = channel;
         this.executors = (ThreadPoolExecutor) Executors.newFixedThreadPool(5);

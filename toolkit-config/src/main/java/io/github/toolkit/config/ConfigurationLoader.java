@@ -54,7 +54,7 @@ public class ConfigurationLoader implements ImportSelector, EnvironmentAware, Be
     public String[] selectImports(AnnotationMetadata importingClassMetadata) {
         ConfigCenterType configCenterType = resolve();
 
-        if (configCenterType == ConfigCenterType.CloudConfig) {
+        if (configCenterType == ConfigCenterType.SpringCloudConfig) {
             prepareConfigFromSpringCloudConfig(importingClassMetadata);
 
         } else if (configCenterType == ConfigCenterType.Nacos) {
@@ -65,8 +65,6 @@ public class ConfigurationLoader implements ImportSelector, EnvironmentAware, Be
                 LOGGER.error("prepareConfigFromNacos Fail", e);
             }
 
-        } else if (configCenterType == ConfigCenterType.Panda) {
-            LOGGER.info("识别当前使用 PANDA 配置中心, 忽略 @PrepareConfigurations 配置附加!");
         } else {
             LOGGER.warn("未识别到配置中心！");
         }
@@ -99,8 +97,9 @@ public class ConfigurationLoader implements ImportSelector, EnvironmentAware, Be
         // 加载公共配置
         Map<String, Object> attrs = importingClassMetadata.getAnnotationAttributes(PrepareConfigurations.class.getName());
         String[] names = (String[]) attrs.get("value");
+        String group = (String) attrs.get("group");
         for (String configName : names) {
-            String content = configService.getConfig(configName, "commons", 3000);
+            String content = configService.getConfig(configName, group, 3000);
             if (content == null || content.isEmpty()) {
                 LOGGER.error("{} 读取失败", configName);
                 continue;
@@ -118,13 +117,7 @@ public class ConfigurationLoader implements ImportSelector, EnvironmentAware, Be
     private ConfigCenterType resolve() {
         try {
             Class.forName("org.springframework.cloud.config.client.ConfigServicePropertySourceLocator");
-            return ConfigCenterType.CloudConfig;
-        } catch (ClassNotFoundException ignore) {
-        }
-
-        try {
-            Class.forName("io.github.open.toolkit.config.extension.ExtensionConfigsBeanDefinition");
-            return ConfigCenterType.Panda;
+            return ConfigCenterType.SpringCloudConfig;
         } catch (ClassNotFoundException ignore) {
         }
 
@@ -185,7 +178,7 @@ public class ConfigurationLoader implements ImportSelector, EnvironmentAware, Be
     }
 
     enum ConfigCenterType {
-        CloudConfig, Nacos, Panda, None
+        SpringCloudConfig, Nacos, None
     }
 
 }

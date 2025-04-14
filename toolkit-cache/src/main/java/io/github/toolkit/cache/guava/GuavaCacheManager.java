@@ -115,20 +115,20 @@ public class GuavaCacheManager {
 
         logger.info("GuavaCacheManager refresh 刷新缓存 cacheName = {}, cacheKey = {}", cacheName, cacheKey);
 
-        AbstractLoadingCache<Object, Object> cache = getCacheByName(cacheName);
+        AbstractLoadingCache<Object, Object> cacheMap = getCacheByName(cacheName);
 
-        if (cache == null) {
+        if (cacheMap == null) {
             logger.warn("GuavaCacheManager refresh 刷新缓存 cacheName = {} 失败, 因为 cacheKey = {} 不存在！", cacheName, cacheKey);
 
-        } else if (cache.getRefreshCodeMap().containsKey(refreshCode)) {
+        } else if (cacheMap.getRefreshCodeMap().containsKey(refreshCode)) {
             logger.info("GuavaCacheManager resetCache 不刷新缓存 cacheName = {}, 因为 重试刷新 cacheName refreshCode = {}，已经存在！", cacheName, refreshCode);
 
         } else {
-            cache.getRefreshCodeMap().put(refreshCode, "");
-            Class<?> clazz = getClassGenericType(cache.getClass(), 0);
+            cacheMap.getRefreshCodeMap().put(refreshCode, "");
+            Class<?> clazz = getClassGenericType(cacheMap.getClass(), 0);
             Object key = JSON.parseObject(cacheKey, clazz);
-            cache.getCache().refresh(key);
-            cache.setResetTime(new Date());
+            cacheMap.getCache().refresh(key);
+            cacheMap.setResetTime(new Date());
         }
     }
 
